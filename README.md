@@ -26,20 +26,9 @@ The system is intentionally lightweight and built for rapid prototyping. It is *
 
 ### High-Level Flow
 
-FastAPI Server
-    ↓
-LangGraph Workflow
-    ├── Triage Agent (classify intent, determine complexity)
-    ├── Order/Payment Agent (deterministic database lookup)
-    └── Response Agent (generate answer)
-    ↓
-ModelRouter (select model, retry, fallback)
-    ↓
-Google Gemini API
-    ↓
-Structured Output (Pydantic validation)
-    ↓
-Runtime Metrics & Logging
+<img width="244" height="170" alt="Screenshot 2026-09-13 164232" src="https://github.com/user-attachments/assets/975e700c-3a4e-44b1-96bf-e9782a0972e8" />
+
+
 
 ### 📋 Request Flow
 
