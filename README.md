@@ -139,13 +139,6 @@ START
 END
 ```
 
-### 🔑 Key Points
-
-- **Not every node is an LLM call** — Order/Payment node is deterministic (database lookup only)
-- **State explicitly typed** — `SupportState` documents what data flows through the workflow
-- **Linear workflow** — All three nodes run for every request
-- **Easy to inspect** — Each node's input and output are visible
-
 ### ✅ Why LangGraph?
 
 - Makes agent workflows explicit and debuggable
@@ -422,18 +415,6 @@ python -m venv venv
 venv\Scripts\activate
 ```
 
-**Windows (PowerShell):**
-```powershell
-python -m venv venv
-.\venv\Scripts\Activate.ps1
-```
-
-**macOS/Linux:**
-```bash
-python -m venv venv
-source venv/bin/activate
-```
-
 ### 3️⃣ Install Dependencies
 
 ```bash
@@ -483,20 +464,6 @@ curl http://127.0.0.1:8000/health
 venv\Scripts\activate
 streamlit run ui/app.py
 ```
-
-**Windows (PowerShell):**
-```powershell
-.\venv\Scripts\Activate.ps1
-streamlit run ui/app.py
-```
-
-**macOS/Linux:**
-```bash
-source venv/bin/activate
-streamlit run ui/app.py
-```
-
-Streamlit will open at `http://localhost:8501`.
 
 ### 8️⃣ Run Evaluations (In a New Terminal)
 
@@ -605,51 +572,7 @@ Notice: Model is `gemini-3.8-flash` (complex model) due to complexity routing.
 
 ---
 
-## 🎯 Design Decisions
 
-### Model Routing
-Different requests have different complexity and latency requirements. Simple questions can be answered quickly and cheaply. Complex questions benefit from more capable models.
 
-### LangGraph
-Explicit workflow definition makes data flow transparent and debugging straightforward. LangGraph is the standard for agentic AI orchestration.
 
-### Deterministic Database Lookup
-LLMs hallucinate facts. By retrieving order/payment data from a database and providing it to the LLM, we ensure answers are grounded in real data.
 
-### Pydantic Validation
-Enforces that LLM outputs conform to expected schemas (intent, complexity, confidence). Enables type safety and structured data flow through the system.
-
-### Retry & Fallback
-Makes the system resilient. Transient API errors don't immediately fail the request; retries have a chance to succeed. If the primary model consistently fails, fallback ensures an attempt is made.
-
-### Lightweight Architecture
-This is a prototype for rapid development and exploration. Keeping complexity low makes it easy to understand design decisions and modify behavior quickly.
-
----
-
-## ⚠️ Limitations
-
-This project is a **lightweight prototype** and does not include:
-
-- 🔐 **Production authentication** — No API keys, JWT, or authorization
-- 🌐 **Distributed infrastructure** — No load balancing, caching, or multi-node deployment
-- 🎛️ **Production centralized control plane** — `config.yaml` is local; no remote policy service
-- 📊 **Large-scale evaluation infrastructure** — 10 test cases, not thousands
-- 💳 **Real payment systems** — Mock SQLite data, not live payment processors
-- 🚨 **Production error handling** — Limited custom exceptions and error recovery
-- 🧪 **A/B testing framework** — No infrastructure for comparing model versions
-- 📋 **Compliance/audit logs** — No GDPR, PII redaction, or compliance logging
-
-These omissions are intentional. They simplify the codebase for rapid prototyping and exploration.
-
----
-
-## 📝 License
-
-This project is provided as-is for educational purposes. No license is specified.
-
----
-
-## 👤 Contact
-
-For questions or feedback, reach out to the repository owner: [Kush-tech1](https://github.com/Kush-tech1)
