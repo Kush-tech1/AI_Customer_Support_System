@@ -2,8 +2,7 @@
 
 An intelligent e-commerce customer support system that uses LLM-based agents, model routing, and agentic orchestration to handle customer inquiries about orders, payments, refunds, and FAQs.
 
-<img width="431" height="292" alt="image" src="https://github.com/user-attachments/assets/bb5a0c2e-a3ab-48e9-be38-ee766f8c178d" />
-
+<img width="479" height="323" alt="image" src="https://github.com/user-attachments/assets/f55868d3-31b3-412d-969d-6fc585966607" />
 
 ## 📌 Overview
 
