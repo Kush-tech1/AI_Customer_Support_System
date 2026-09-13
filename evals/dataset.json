@@ -1,0 +1,82 @@
+[
+  {
+    "name": "order_status_01",
+    "message": "Where is my order 1001?",
+    "expected_intent": "order_status",
+    "expected_complexity": "simple",
+    "expected_order_id": 1001,
+    "expected_answer_contains": ["shipped"]
+  },
+  {
+    "name": "order_status_02",
+    "message": "Can you tell me the status of order 1002?",
+    "expected_intent": "order_status",
+    "expected_complexity": "simple",
+    "expected_order_id": 1002,
+    "expected_answer_contains": ["delivered"]
+  },
+  {
+    "name": "cancellation_01",
+    "message": "Can I cancel order 1004?",
+    "expected_intent": "order_cancelled",
+    "expected_complexity": "simple",
+    "expected_order_id": 1004,
+    "expected_answer_contains": ["cancel"]
+  },
+  {
+    "name": "payment_01",
+    "message": "I have a payment problem with order 1004.",
+    "expected_intent": "payment_issue",
+    "expected_complexity": "complex",
+    "expected_order_id": 1004,
+    "expected_answer_contains": ["payment"]
+  },
+  {
+    "name": "refund_01",
+    "message": "What is your refund policy?",
+    "expected_intent": "refund_policy",
+    "expected_complexity": "simple",
+    "expected_order_id": null,
+    "expected_answer_contains": ["refund"]
+  },
+  {
+    "name": "refund_02",
+    "message": "How long does a refund take?",
+    "expected_intent": "refund_policy",
+    "expected_complexity": "simple",
+    "expected_order_id": null,
+    "expected_answer_contains": ["5 business days"]
+  },
+  {
+    "name": "cancel_payment_01",
+    "message": "My order 1003 was cancelled but I was charged. When will I get my money back?",
+    "expected_intent": "order_cancelled",
+    "expected_complexity": "complex",
+    "expected_order_id": 1003,
+    "expected_answer_contains": ["refund", "5 business days"]
+  },
+  {
+    "name": "cancel_payment_02",
+    "message": "Order 1005 was cancelled and my payment was captured.",
+    "expected_intent": "order_cancelled",
+    "expected_complexity": "complex",
+    "expected_order_id": 1005,
+    "expected_answer_contains": ["refund"]
+  },
+  {
+    "name": "faq_01",
+    "message": "Can orders be cancelled before shipping?",
+    "expected_intent": "order_cancelled",
+    "expected_complexity": "simple",
+    "expected_order_id": null,
+    "expected_answer_contains": ["cancel"]
+  },
+  {
+    "name": "general_01",
+    "message": "What happens after an order is shipped?",
+    "expected_intent": "general_faq",
+    "expected_complexity": "simple",
+    "expected_order_id": null,
+    "expected_answer_contains": []
+  }
+]

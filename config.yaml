@@ -1,0 +1,17 @@
+models:
+  default: gemini-3.1-flash-lite
+  complex: gemini-3.8-flash
+  fallback: gemini-3.1-flash-lite
+
+runtime:
+  max_retries: 2
+  timeout_seconds: 10
+
+routing:
+  complex_intents:
+    - payment_issue
+    - cancellation_with_payment
+    - refund_dispute
+
+demo:
+  force_model_failure: false
