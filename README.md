@@ -21,9 +21,10 @@ The system is intentionally lightweight and built for rapid prototyping. It is *
 
 ## 🏗️ Architecture
 
+<img width="1222" height="1287" alt="image" src="https://github.com/user-attachments/assets/38fc8739-adcc-4882-aee7-fbd95a87de38" />
+
 ### High-Level Flow
 
-```
 FastAPI Server
     ↓
 LangGraph Workflow
@@ -38,7 +39,6 @@ Google Gemini API
 Structured Output (Pydantic validation)
     ↓
 Runtime Metrics & Logging
-```
 
 ### 📋 Request Flow
 
