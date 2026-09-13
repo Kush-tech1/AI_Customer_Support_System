@@ -23,13 +23,6 @@ The system is intentionally lightweight and built for rapid prototyping. It is *
 
 <img width="1222" height="1287" alt="image" src="https://github.com/user-attachments/assets/38fc8739-adcc-4882-aee7-fbd95a87de38" />
 
-
-### High-Level Flow
-
-<img width="244" height="170" alt="Screenshot 2026-09-13 164232" src="https://github.com/user-attachments/assets/975e700c-3a4e-44b1-96bf-e9782a0972e8" />
-
-
-
 ### 📋 Request Flow
 
 #### Simple Request
